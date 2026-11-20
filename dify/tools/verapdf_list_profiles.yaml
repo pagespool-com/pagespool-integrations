@@ -1,0 +1,13 @@
+identity:
+  name: "verapdf_list_profiles"
+  author: "podshalocef"
+  label:
+    en_US: "Verapdf list profiles"
+description:
+  human:
+    en_US: "List veraPDF's validation profiles."
+  llm: "List veraPDF's validation profiles. veraPDF REST's `GET /api/profiles`: the details of every validation profile. JSON, or XML when `Accept` names xml. Free; no API key needed."
+parameters: []
+extra:
+  python:
+    source: "tools/verapdf_list_profiles.py"

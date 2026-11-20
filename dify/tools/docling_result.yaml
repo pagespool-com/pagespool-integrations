@@ -1,0 +1,22 @@
+identity:
+  name: "docling_result"
+  author: "podshalocef"
+  label:
+    en_US: "Docling result"
+description:
+  human:
+    en_US: "Download a conversion's result."
+  llm: "Download a conversion's result. docling-serve's `GET /v1/result/{task_id}`: the converted document, docling-serve's `ConvertDocumentResponse`. Free."
+parameters:
+  - name: "task_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Task ID"
+    human_description:
+      en_US: "Task ID"
+    llm_description: "Task ID"
+    form: "llm"
+extra:
+  python:
+    source: "tools/docling_result.py"

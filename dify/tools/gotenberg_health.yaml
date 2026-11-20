@@ -1,0 +1,13 @@
+identity:
+  name: "gotenberg_health"
+  author: "podshalocef"
+  label:
+    en_US: "Gotenberg health"
+description:
+  human:
+    en_US: "Check that Gotenberg is up."
+  llm: "Check that Gotenberg is up. Gotenberg's `GET /health`, unchanged: `{\"status\": \"up\", \"details\": {…}}`, with 503 when Chromium or LibreOffice is down. Free."
+parameters: []
+extra:
+  python:
+    source: "tools/gotenberg_health.py"

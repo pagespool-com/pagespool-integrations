@@ -1,0 +1,13 @@
+identity:
+  name: "gotenberg_version"
+  author: "podshalocef"
+  label:
+    en_US: "Gotenberg version"
+description:
+  human:
+    en_US: "Show Gotenberg's version."
+  llm: "Show Gotenberg's version. Gotenberg's `GET /version`, unchanged: the version as plain text. Free."
+parameters: []
+extra:
+  python:
+    source: "tools/gotenberg_version.py"

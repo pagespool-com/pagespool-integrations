@@ -1,0 +1,13 @@
+identity:
+  name: "verapdf_info"
+  author: "podshalocef"
+  label:
+    en_US: "Verapdf info"
+description:
+  human:
+    en_US: "Get the veraPDF server's environment."
+  llm: "Get the veraPDF server's environment. veraPDF REST's `GET /api/info`: the operating system and Java runtime of the server, always as JSON. Its `server` member (the container's own address and host name) is left out. Free; no API key needed."
+parameters: []
+extra:
+  python:
+    source: "tools/verapdf_info.py"

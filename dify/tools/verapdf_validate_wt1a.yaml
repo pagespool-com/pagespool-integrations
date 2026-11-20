@@ -1,0 +1,22 @@
+identity:
+  name: "verapdf_validate_wt1a"
+  author: "podshalocef"
+  label:
+    en_US: "Verapdf validate wt1a"
+description:
+  human:
+    en_US: "Check a PDF against WTPDF 1.0 Accessibility."
+  llm: "Check a PDF against WTPDF 1.0 Accessibility. Validates one PDF against WTPDF 1.0 Accessibility with veraPDF and returns veraPDF's report, the same report veraPDF REST returns for `POST /api/validate/wt1a`. The PDF is multipart form field `file`, at most 25 MB; a check runs at most 50 seconds. `Accept` picks the format: `application/xml`, `text/html`, or JSON for anything else. The verdict is `report.jobs[0].validationResult[0].compliant`. A failed call costs no credits."
+parameters:
+  - name: "file"
+    type: "file"
+    required: true
+    label:
+      en_US: "File"
+    human_description:
+      en_US: "The PDF, as multipart form field `file`. At most 25 MB."
+    llm_description: "The PDF, as multipart form field `file`. At most 25 MB."
+    form: "llm"
+extra:
+  python:
+    source: "tools/verapdf_validate_wt1a.py"

@@ -1,0 +1,49 @@
+identity:
+  name: "docling_convert_source_async"
+  author: "podshalocef"
+  label:
+    en_US: "Docling convert source async"
+description:
+  human:
+    en_US: "Queue a document from a URL or base64 for conversion (1 credit per PDF page, 10 per other file). It queues a job and returns its id: poll it with the docling_status_poll tool, then fetch the output with docling_result."
+  llm: "Queue a document from a URL or base64 for conversion (1 credit per PDF page, 10 per other file). docling-serve's `POST /v1/convert/source/async`: queues one document given by https URL or inline, and returns its task at once. It queues a job and returns its id: poll it with the docling_status_poll tool, then fetch the output with docling_result."
+parameters:
+  - name: "options"
+    type: "string"
+    required: false
+    label:
+      en_US: "Options"
+    human_description:
+      en_US: "Conversion options, a subset of docling-serve's. Any other option is refused with a 400 (`unsupported_option`). (JSON object)"
+    llm_description: "Conversion options, a subset of docling-serve's. Any other option is refused with a 400 (`unsupported_option`). (JSON object)"
+    form: "llm"
+  - name: "sources"
+    type: "string"
+    required: true
+    label:
+      en_US: "Sources"
+    human_description:
+      en_US: "Exactly one source. (JSON array)"
+    llm_description: "Exactly one source. (JSON array)"
+    form: "llm"
+  - name: "target"
+    type: "string"
+    required: false
+    label:
+      en_US: "Target"
+    human_description:
+      en_US: "Only `{\"kind\": \"inbody\"}`, the default: the result is in the response. (JSON object)"
+    llm_description: "Only `{\"kind\": \"inbody\"}`, the default: the result is in the response. (JSON object)"
+    form: "llm"
+  - name: "callbacks"
+    type: "string"
+    required: false
+    label:
+      en_US: "Callbacks"
+    human_description:
+      en_US: "Not supported: leave it empty. (JSON array)"
+    llm_description: "Not supported: leave it empty. (JSON array)"
+    form: "llm"
+extra:
+  python:
+    source: "tools/docling_convert_source_async.py"

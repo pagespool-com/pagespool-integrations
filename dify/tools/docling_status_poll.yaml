@@ -1,0 +1,22 @@
+identity:
+  name: "docling_status_poll"
+  author: "podshalocef"
+  label:
+    en_US: "Docling status poll"
+description:
+  human:
+    en_US: "Check a conversion."
+  llm: "Check a conversion. docling-serve's `GET /v1/status/poll/{task_id}`: the conversion's state, `pending`, `started`, `success` or `failure` (with `error_message`). Free."
+parameters:
+  - name: "task_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Task ID"
+    human_description:
+      en_US: "Task ID"
+    llm_description: "Task ID"
+    form: "llm"
+extra:
+  python:
+    source: "tools/docling_status_poll.py"

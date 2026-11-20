@@ -1,0 +1,102 @@
+identity:
+  name: "ocrmypdf_submit"
+  author: "podshalocef"
+  label:
+    en_US: "Ocrmypdf submit"
+description:
+  human:
+    en_US: "OCR a scanned PDF or image, 2 credits per page. It queues a job and returns its id: poll it with the get_job tool, then fetch the output with ocrmypdf_get_result."
+  llm: "OCR a scanned PDF or image, 2 credits per page. Queues a PDF, PNG or JPEG for OCR with OCRmyPDF and Tesseract. It queues a job and returns its id: poll it with the get_job tool, then fetch the output with ocrmypdf_get_result."
+parameters:
+  - name: "file"
+    type: "file"
+    required: true
+    label:
+      en_US: "File"
+    human_description:
+      en_US: "The PDF, PNG or JPEG file, as multipart form data with its Content-Type."
+    llm_description: "The PDF, PNG or JPEG file, as multipart form data with its Content-Type."
+    form: "llm"
+  - name: "language"
+    type: "select"
+    required: false
+    label:
+      en_US: "Language"
+    human_description:
+      en_US: "The document's language: `eng`, `deu`, `spa` or `fra`."
+    llm_description: "The document's language: `eng`, `deu`, `spa` or `fra`."
+    form: "llm"
+    options:
+      - value: "eng"
+        label:
+          en_US: "eng"
+      - value: "deu"
+        label:
+          en_US: "deu"
+      - value: "spa"
+        label:
+          en_US: "spa"
+      - value: "fra"
+        label:
+          en_US: "fra"
+    default: "eng"
+  - name: "output_type"
+    type: "select"
+    required: false
+    label:
+      en_US: "Output type"
+    human_description:
+      en_US: "`pdfa` (PDF/A-2b, the default) or `pdf`."
+    llm_description: "`pdfa` (PDF/A-2b, the default) or `pdf`."
+    form: "llm"
+    options:
+      - value: "pdfa"
+        label:
+          en_US: "pdfa"
+      - value: "pdf"
+        label:
+          en_US: "pdf"
+    default: "pdfa"
+  - name: "mode"
+    type: "select"
+    required: false
+    label:
+      en_US: "Mode"
+    human_description:
+      en_US: "Pages that already have text: `skip` them (the default), `redo` an earlier OCR layer, or `force` OCR on every page as an image."
+    llm_description: "Pages that already have text: `skip` them (the default), `redo` an earlier OCR layer, or `force` OCR on every page as an image."
+    form: "llm"
+    options:
+      - value: "skip"
+        label:
+          en_US: "skip"
+      - value: "redo"
+        label:
+          en_US: "redo"
+      - value: "force"
+        label:
+          en_US: "force"
+    default: "skip"
+  - name: "deskew"
+    type: "boolean"
+    required: false
+    label:
+      en_US: "Deskew"
+    human_description:
+      en_US: "Straighten crooked pages. Not with `mode=redo`."
+    llm_description: "Straighten crooked pages. Not with `mode=redo`."
+    form: "llm"
+    default: false
+  - name: "rotate_pages"
+    type: "boolean"
+    required: false
+    label:
+      en_US: "Rotate pages"
+    human_description:
+      en_US: "Turn pages that are upside down or sideways."
+    llm_description: "Turn pages that are upside down or sideways."
+    form: "llm"
+    default: false
+extra:
+  python:
+    source: "tools/ocrmypdf_submit.py"

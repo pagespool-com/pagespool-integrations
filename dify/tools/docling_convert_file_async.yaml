@@ -1,0 +1,184 @@
+identity:
+  name: "docling_convert_file_async"
+  author: "podshalocef"
+  label:
+    en_US: "Docling convert file async"
+description:
+  human:
+    en_US: "Queue an uploaded document for conversion (1 credit per PDF page, 10 per other file). It queues a job and returns its id: poll it with the docling_status_poll tool, then fetch the output with docling_result."
+  llm: "Queue an uploaded document for conversion (1 credit per PDF page, 10 per other file). docling-serve's `POST /v1/convert/file/async`: queues one uploaded document and returns its task at once. It queues a job and returns its id: poll it with the docling_status_poll tool, then fetch the output with docling_result."
+parameters:
+  - name: "files"
+    type: "files"
+    required: true
+    label:
+      en_US: "Files"
+    human_description:
+      en_US: "The document. One file per request, up to 25 MB."
+    llm_description: "The document. One file per request, up to 25 MB."
+    form: "llm"
+  - name: "to_formats"
+    type: "string"
+    required: false
+    label:
+      en_US: "To formats"
+    human_description:
+      en_US: "Output formats (repeat the field): md, json, html, text, doctags or doclang. (comma-separated values)"
+    llm_description: "Output formats (repeat the field): md, json, html, text, doctags or doclang. (comma-separated values)"
+    form: "llm"
+  - name: "from_formats"
+    type: "string"
+    required: false
+    label:
+      en_US: "From formats"
+    human_description:
+      en_US: "Input formats to accept. (comma-separated values)"
+    llm_description: "Input formats to accept. (comma-separated values)"
+    form: "llm"
+  - name: "image_export_mode"
+    type: "string"
+    required: false
+    label:
+      en_US: "Image export mode"
+    human_description:
+      en_US: "placeholder, embedded or referenced."
+    llm_description: "placeholder, embedded or referenced."
+    form: "llm"
+  - name: "do_ocr"
+    type: "boolean"
+    required: false
+    label:
+      en_US: "Do ocr"
+    human_description:
+      en_US: "Run OCR on bitmap content (default true)."
+    llm_description: "Run OCR on bitmap content (default true)."
+    form: "llm"
+  - name: "force_ocr"
+    type: "boolean"
+    required: false
+    label:
+      en_US: "Force ocr"
+    human_description:
+      en_US: "Replace the text layer with OCR text. Doubles a PDF's price."
+    llm_description: "Replace the text layer with OCR text. Doubles a PDF's price."
+    form: "llm"
+  - name: "ocr_engine"
+    type: "string"
+    required: false
+    label:
+      en_US: "Ocr engine"
+    human_description:
+      en_US: "The OCR engine (default auto)."
+    llm_description: "The OCR engine (default auto)."
+    form: "llm"
+  - name: "ocr_lang"
+    type: "string"
+    required: false
+    label:
+      en_US: "Ocr lang"
+    human_description:
+      en_US: "OCR languages as BCP-47 tags. (comma-separated values)"
+    llm_description: "OCR languages as BCP-47 tags. (comma-separated values)"
+    form: "llm"
+  - name: "pdf_backend"
+    type: "string"
+    required: false
+    label:
+      en_US: "PDF backend"
+    human_description:
+      en_US: "The PDF backend."
+    llm_description: "The PDF backend."
+    form: "llm"
+  - name: "table_mode"
+    type: "string"
+    required: false
+    label:
+      en_US: "Table mode"
+    human_description:
+      en_US: "accurate (default) or fast."
+    llm_description: "accurate (default) or fast."
+    form: "llm"
+  - name: "page_range"
+    type: "string"
+    required: false
+    label:
+      en_US: "Page range"
+    human_description:
+      en_US: "First and last page, 1-based (send the field twice). (comma-separated values)"
+    llm_description: "First and last page, 1-based (send the field twice). (comma-separated values)"
+    form: "llm"
+  - name: "abort_on_error"
+    type: "boolean"
+    required: false
+    label:
+      en_US: "Abort on error"
+    human_description:
+      en_US: "Stop at the first error."
+    llm_description: "Stop at the first error."
+    form: "llm"
+  - name: "do_table_structure"
+    type: "boolean"
+    required: false
+    label:
+      en_US: "Do table structure"
+    human_description:
+      en_US: "Extract table structure."
+    llm_description: "Extract table structure."
+    form: "llm"
+  - name: "include_images"
+    type: "boolean"
+    required: false
+    label:
+      en_US: "Include images"
+    human_description:
+      en_US: "Include picture images."
+    llm_description: "Include picture images."
+    form: "llm"
+  - name: "images_scale"
+    type: "number"
+    required: false
+    label:
+      en_US: "Images scale"
+    human_description:
+      en_US: "Scale factor for images."
+    llm_description: "Scale factor for images."
+    form: "llm"
+  - name: "md_page_break_placeholder"
+    type: "string"
+    required: false
+    label:
+      en_US: "Md page break placeholder"
+    human_description:
+      en_US: "Text put between pages in the Markdown."
+    llm_description: "Text put between pages in the Markdown."
+    form: "llm"
+  - name: "pipeline"
+    type: "string"
+    required: false
+    label:
+      en_US: "Pipeline"
+    human_description:
+      en_US: "Only standard, the default."
+    llm_description: "Only standard, the default."
+    form: "llm"
+  - name: "target_type"
+    type: "string"
+    required: false
+    label:
+      en_US: "Target type"
+    human_description:
+      en_US: "Only inbody, the default."
+    llm_description: "Only inbody, the default."
+    form: "llm"
+  - name: "callbacks"
+    type: "string"
+    required: false
+    label:
+      en_US: "Callbacks"
+    human_description:
+      en_US: "Not supported. (comma-separated values)"
+    llm_description: "Not supported. (comma-separated values)"
+    form: "llm"
+extra:
+  python:
+    source: "tools/docling_convert_file_async.py"

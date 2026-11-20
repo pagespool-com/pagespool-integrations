@@ -1,0 +1,31 @@
+identity:
+  name: "gotenberg_pdf_insert"
+  author: "podshalocef"
+  label:
+    en_US: "Gotenberg PDF insert"
+description:
+  human:
+    en_US: "Insert pages into PDFs."
+  llm: "Insert pages into PDFs. Gotenberg's `POST /forms/pdf/insert`, unchanged: send the form its documentation describes (https://gotenberg.dev/docs/pdf/insert) and get its output back. Up to 26 MiB and 55 seconds per request. Webhooks and `downloadFrom` are not supported. A rejected or failed call costs no credits."
+parameters:
+  - name: "files"
+    type: "files"
+    required: false
+    label:
+      en_US: "Files"
+    human_description:
+      en_US: "The input files, and the files the other fields name, as Gotenberg's documentation describes for this route."
+    llm_description: "The input files, and the files the other fields name, as Gotenberg's documentation describes for this route."
+    form: "llm"
+  - name: "form_fields"
+    type: "string"
+    required: false
+    label:
+      en_US: "Form fields"
+    human_description:
+      en_US: "Further form fields of this request, as a JSON object of names and text values, for example {\"landscape\": \"true\"}. The description of this tool says which fields the route takes."
+    llm_description: "Further form fields of this request, as a JSON object of names and text values, for example {\"landscape\": \"true\"}. The description of this tool says which fields the route takes."
+    form: "llm"
+extra:
+  python:
+    source: "tools/gotenberg_pdf_insert.py"

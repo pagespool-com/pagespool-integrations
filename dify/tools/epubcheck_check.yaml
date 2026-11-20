@@ -1,0 +1,22 @@
+identity:
+  name: "epubcheck_check"
+  author: "podshalocef"
+  label:
+    en_US: "Epubcheck check"
+description:
+  human:
+    en_US: "Check an EPUB file with EPUBCheck."
+  llm: "Check an EPUB file with EPUBCheck. Checks one EPUB file against the EPUB specifications with EPUBCheck, the W3C's conformance checker, and returns its report."
+parameters:
+  - name: "file"
+    type: "file"
+    required: true
+    label:
+      en_US: "File"
+    human_description:
+      en_US: "The EPUB file (EPUB 2 or 3), sent as multipart form data."
+    llm_description: "The EPUB file (EPUB 2 or 3), sent as multipart form data."
+    form: "llm"
+extra:
+  python:
+    source: "tools/epubcheck_check.py"

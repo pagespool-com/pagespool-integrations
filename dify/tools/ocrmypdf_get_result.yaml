@@ -1,0 +1,22 @@
+identity:
+  name: "ocrmypdf_get_result"
+  author: "podshalocef"
+  label:
+    en_US: "Ocrmypdf get result"
+description:
+  human:
+    en_US: "Download the searchable PDF of an OCR job."
+  llm: "Download the searchable PDF of an OCR job. Returns the PDF of one of your finished OCR jobs."
+parameters:
+  - name: "job_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Job ID"
+    human_description:
+      en_US: "Job ID"
+    llm_description: "Job ID"
+    form: "llm"
+extra:
+  python:
+    source: "tools/ocrmypdf_get_result.py"

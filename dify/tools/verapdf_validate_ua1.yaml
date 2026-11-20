@@ -1,0 +1,22 @@
+identity:
+  name: "verapdf_validate_ua1"
+  author: "podshalocef"
+  label:
+    en_US: "Verapdf validate ua1"
+description:
+  human:
+    en_US: "Check a PDF against PDF/UA-1."
+  llm: "Check a PDF against PDF/UA-1. Validates one PDF against PDF/UA-1 with veraPDF and returns veraPDF's report, the same report veraPDF REST returns for `POST /api/validate/ua1`. The PDF is multipart form field `file`, at most 25 MB; a check runs at most 50 seconds. `Accept` picks the format: `application/xml`, `text/html`, or JSON for anything else. The verdict is `report.jobs[0].validationResult[0].compliant`. A failed call costs no credits."
+parameters:
+  - name: "file"
+    type: "file"
+    required: true
+    label:
+      en_US: "File"
+    human_description:
+      en_US: "The PDF, as multipart form field `file`. At most 25 MB."
+    llm_description: "The PDF, as multipart form field `file`. At most 25 MB."
+    form: "llm"
+extra:
+  python:
+    source: "tools/verapdf_validate_ua1.py"

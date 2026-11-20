@@ -1,0 +1,22 @@
+identity:
+  name: "verapdf_get_profile"
+  author: "podshalocef"
+  label:
+    en_US: "Verapdf get profile"
+description:
+  human:
+    en_US: "Get one veraPDF validation profile."
+  llm: "Get one veraPDF validation profile. veraPDF REST's `GET /api/profiles/{id}`: one validation profile with its rules (`ids` returns the list of profile ids, `flavours` the flavours). JSON, or XML when `Accept` names xml. Free; no API key needed."
+parameters:
+  - name: "profile_id"
+    type: "string"
+    required: true
+    label:
+      en_US: "Profile ID"
+    human_description:
+      en_US: "A profile id, such as `2b` or `ua1`; `ids` lists every id."
+    llm_description: "A profile id, such as `2b` or `ua1`; `ids` lists every id."
+    form: "llm"
+extra:
+  python:
+    source: "tools/verapdf_get_profile.py"
