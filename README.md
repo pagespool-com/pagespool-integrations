@@ -12,7 +12,7 @@ Official integrations for the [pagespool API](https://pagespool.com), generated 
 
 ## Integrations
 
-The first packages are on their way.
+- **Python SDK** — `pip install pagespool` · [PyPI](https://pypi.org/project/pagespool/)
 
 ## Operations
 
