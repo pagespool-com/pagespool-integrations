@@ -19,7 +19,7 @@ OPERATION = {
             "type": "array"
         }
     ],
-    "open_form": true
+    "open_form": True
 }
 
 
