@@ -11,7 +11,7 @@ BASE_URL = 'https://api.pagespool.com'
 AUTH_HEADER = 'X-API-Key'
 CREDENTIAL = 'x_api_key'
 KEY_URL = 'https://pagespool.com/go/dify?to=/app/api-keys'
-USER_AGENT = 'pagespool-dify/1.0.1'
+USER_AGENT = 'pagespool-dify/1.0.2'
 TIMEOUT = 240
 TITLE = 'pagespool'
 FORM_FIELDS = 'form_fields'
