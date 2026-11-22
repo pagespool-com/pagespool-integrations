@@ -12,7 +12,9 @@ Official integrations for the [pagespool API](https://pagespool.com), generated 
 
 ## Integrations
 
+- **Dify** — [`podshalocef/pagespool`](https://marketplace.dify.ai/plugin/podshalocef/pagespool) on the Dify Marketplace
 - **Python SDK** — `pip install pagespool` · [PyPI](https://pypi.org/project/pagespool/)
+- **GitHub Action** — [`pagespool-com/pagespool-action`](https://github.com/marketplace/actions/pagespool-api) on the GitHub Marketplace
 
 ## Operations
 
