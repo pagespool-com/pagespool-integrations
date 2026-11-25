@@ -1,4 +1,4 @@
-# pagespool — Python SDK
+# Pagespool — Python SDK
 
 Seven open-source document engines behind one API key: Docling, MarkItDown, WeasyPrint, veraPDF, Gotenberg, OCRmyPDF, EPUBCheck.
 

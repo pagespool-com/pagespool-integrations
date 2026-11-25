@@ -2,7 +2,7 @@ identity:
   author: "podshalocef"
   name: "pagespool"
   label:
-    en_US: "pagespool"
+    en_US: "Pagespool"
   description:
     en_US: "Seven open-source document engines behind one API key: Docling, MarkItDown, WeasyPrint, veraPDF, Gotenberg, OCRmyPDF, EPUBCheck."
   icon: "icon.svg"
@@ -14,11 +14,11 @@ credentials_for_provider:
     type: "secret-input"
     required: false
     label:
-      en_US: "pagespool API key (optional)"
+      en_US: "Pagespool API key (optional)"
     placeholder:
       en_US: "Leave empty to use the free daily allowance"
     help:
-      en_US: "Get a free pagespool API key"
+      en_US: "Get a free Pagespool API key"
     url: "https://pagespool.com/go/dify?to=/app/api-keys"
 tools:
   - "tools/get_me.yaml"

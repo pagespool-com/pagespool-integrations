@@ -1,9 +1,9 @@
-version: "1.0.2"
+version: "1.0.3"
 type: "plugin"
 author: "podshalocef"
 name: "pagespool"
 label:
-  en_US: "pagespool"
+  en_US: "Pagespool"
 description:
   en_US: "Seven open-source document engines behind one API key: Docling, MarkItDown, WeasyPrint, veraPDF, Gotenberg, OCRmyPDF, EPUBCheck."
 icon: "icon.svg"

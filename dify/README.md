@@ -1,15 +1,15 @@
-# pagespool
+# Pagespool
 
 Seven open-source document engines behind one API key: Docling, MarkItDown, WeasyPrint, veraPDF, Gotenberg, OCRmyPDF, EPUBCheck.
 
-pagespool hosts seven open-source document engines under their own names: Docling, MarkItDown, WeasyPrint, veraPDF, Gotenberg, OCRmyPDF and EPUBCheck. Each engine has its own REST API, MCP server and free tool, and one API key and one credit balance pay for all seven. Docling, veraPDF and Gotenberg answer on their own routes, so their clients work with a new base URL. The servers are in Germany. The free plan has 100 credits a month and needs no card.
+Pagespool hosts seven open-source document engines under their own names: Docling, MarkItDown, WeasyPrint, veraPDF, Gotenberg, OCRmyPDF and EPUBCheck. Each engine has its own REST API, MCP server and web tool, and one API key works for all seven. Docling, veraPDF and Gotenberg answer on their own routes, so their clients work with a new base URL. The servers are in Germany.
 
-A Dify tool plugin for the [pagespool API](https://pagespool.com).
+A Dify tool plugin for the [Pagespool API](https://pagespool.com).
 
 ## Setup
 
-1. Install **pagespool** from the Dify Marketplace (Plugins → Marketplace).
-2. Open the plugin's tool settings and choose **Authorize**. Leave the API key empty to try the tools on the free daily allowance, or paste a [free pagespool API key](https://pagespool.com/go/dify?to=/app/api-keys) for your account's monthly credits.
+1. Install **Pagespool** from the Dify Marketplace (Plugins → Marketplace).
+2. Open the plugin's tool settings and choose **Authorize**. Leave the API key empty to try the tools on the free daily allowance, or paste a [free Pagespool API key](https://pagespool.com/go/dify?to=/app/api-keys) for your account's monthly credits.
 
 Without a key, every call from one network address shares the free daily allowance. On Dify Cloud the calls come from Dify's servers, so other users may draw on the same allowance. Once it is used up, the tool's error says where to get a key.
 
